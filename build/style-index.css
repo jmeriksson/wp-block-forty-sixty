@@ -1,0 +1,38 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 782px) {
+  .wp-block-create-block-forty-sixty-block .forty-sixty-columns {
+    grid-template-columns: 4fr 6fr;
+    gap: 2rem;
+  }
+}
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__left-column h1,
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__left-column h2,
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__left-column h3,
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__left-column h4,
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__left-column h5,
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__left-column h6 {
+  margin-top: 0;
+  color: inherit;
+}
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__right-column > p:first-child,
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__right-column > ul:first-child,
+.wp-block-create-block-forty-sixty-block .forty-sixty-columns__right-column > ol:first-child {
+  margin-top: 0;
+}
+
+.wp-block-create-block-forty-sixty-block.has-background .forty-sixty-columns {
+  padding: 1rem;
+}
+@media (min-width: 782px) {
+  .wp-block-create-block-forty-sixty-block.has-background .forty-sixty-columns {
+    padding: 2rem;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

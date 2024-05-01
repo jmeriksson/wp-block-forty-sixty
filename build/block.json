@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/forty-sixty-block",
+  "version": "0.1.0",
+  "title": "Forty Sixty Block",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "A block with two columns, one with a heading and one with text content.",
+  "example": {},
+  "attributes": {
+    "leftColumnHeading": {
+      "type": "string",
+      "default": "Left Column Heading"
+    },
+    "leftColumnHeadingLevel": {
+      "type": "string",
+      "default": "h2"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide"
+    ],
+    "color": {
+      "text": true,
+      "background": true
+    }
+  },
+  "textdomain": "forty-sixty-block",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
