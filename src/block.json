@@ -16,6 +16,14 @@
 		"leftColumnHeadingLevel": {
 			"type": "string",
 			"default": "h2"
+		},
+		"leftColumnDisplayTagline": {
+			"type": "boolean",
+			"default": true
+		},
+		"leftColumnTagline": {
+			"type": "string",
+			"default": "Left Column Tag Line"
 		}
 	},
 	"supports": {

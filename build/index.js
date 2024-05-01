@@ -30,7 +30,9 @@ function Edit({
 }) {
   const {
     leftColumnHeading,
-    leftColumnHeadingLevel
+    leftColumnHeadingLevel,
+    leftColumnDisplayTagline,
+    leftColumnTagline
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Block settings', 'forty-sixty-block')
@@ -59,13 +61,26 @@ function Edit({
     onChange: value => setAttributes({
       leftColumnHeadingLevel: value
     })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Display Tagline', 'forty-sixty-block'),
+    checked: leftColumnDisplayTagline,
+    onChange: value => setAttributes({
+      leftColumnDisplayTagline: value
+    })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "forty-sixty-columns"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "forty-sixty-columns__left-column"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, leftColumnDisplayTagline ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "small",
+    allowedFormats: ['core/bold', 'core/italic'],
+    value: leftColumnTagline,
+    onChange: value => setAttributes({
+      leftColumnTagline: value
+    })
+  }) : null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: leftColumnHeadingLevel,
     allowedFormats: ['core/bold', 'core/italic'],
     value: leftColumnHeading,
@@ -146,7 +161,7 @@ function save({
     className: "forty-sixty-columns"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "forty-sixty-columns__left-column"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(HeadingTag, null, attributes.leftColumnHeading)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, attributes.leftColumnDisplayTagline ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, attributes.leftColumnTagline) : null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(HeadingTag, null, attributes.leftColumnHeading)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "forty-sixty-columns__right-column"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null))));
 }
@@ -221,7 +236,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/forty-sixty-block","version":"0.1.0","title":"Forty Sixty Block","category":"widgets","icon":"smiley","description":"A block with two columns, one with a heading and one with text content.","example":{},"attributes":{"leftColumnHeading":{"type":"string","default":"Left Column Heading"},"leftColumnHeadingLevel":{"type":"string","default":"h2"}},"supports":{"html":false,"align":["wide"],"color":{"text":true,"background":true}},"textdomain":"forty-sixty-block","editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/forty-sixty-block","version":"0.1.0","title":"Forty Sixty Block","category":"widgets","icon":"smiley","description":"A block with two columns, one with a heading and one with text content.","example":{},"attributes":{"leftColumnHeading":{"type":"string","default":"Left Column Heading"},"leftColumnHeadingLevel":{"type":"string","default":"h2"},"leftColumnDisplayTagline":{"type":"boolean","default":true},"leftColumnTagline":{"type":"string","default":"Left Column Tag Line"}},"supports":{"html":false,"align":["wide"],"color":{"text":true,"background":true}},"textdomain":"forty-sixty-block","editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

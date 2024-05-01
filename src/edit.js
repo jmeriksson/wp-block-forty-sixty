@@ -3,12 +3,22 @@ import {
 	useBlockProps,
 	RichText,
 	InnerBlocks,
-	InspectorControls
+	InspectorControls,
 } from '@wordpress/block-editor'
-import { PanelBody, SelectControl } from '@wordpress/components'
+import {
+	PanelBody,
+	SelectControl,
+	ToggleControl,
+} from '@wordpress/components'
 
 export default function Edit({ attributes, setAttributes}) {
-	const { leftColumnHeading, leftColumnHeadingLevel } = attributes
+	const {
+		leftColumnHeading,
+		leftColumnHeadingLevel,
+		leftColumnDisplayTagline,
+		leftColumnTagline
+	} = attributes
+	
 	return (
 		<>
 			<InspectorControls>
@@ -26,11 +36,24 @@ export default function Edit({ attributes, setAttributes}) {
 						]}
 						onChange={ ( value ) => setAttributes( { leftColumnHeadingLevel: value } ) }
 					/>
+					<ToggleControl
+						label={ __( 'Display Tagline', 'forty-sixty-block' ) }
+						checked={ leftColumnDisplayTagline }
+						onChange={ ( value ) => setAttributes( { leftColumnDisplayTagline: value } ) }
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div { ...useBlockProps() } >
 				<div className="forty-sixty-columns">
 					<div className="forty-sixty-columns__left-column">
+						{ leftColumnDisplayTagline ? (
+							<RichText
+								tagName="small"
+								allowedFormats={['core/bold', 'core/italic']}
+								value={ leftColumnTagline }
+								onChange={ ( value ) => setAttributes( { leftColumnTagline: value } ) }
+							/>
+						) : null }
 						<RichText
 							tagName={ leftColumnHeadingLevel }
 							allowedFormats={['core/bold', 'core/italic']}

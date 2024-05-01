@@ -6,6 +6,9 @@ export default function save({ attributes }) {
 		<div { ...useBlockProps.save() }>
 			<div className="forty-sixty-columns">
 				<div className="forty-sixty-columns__left-column">
+					{ attributes.leftColumnDisplayTagline ? (
+						<small>{ attributes.leftColumnTagline }</small>
+					) : null }
 					<HeadingTag>{ attributes.leftColumnHeading }</HeadingTag>
 				</div>
 				<div className="forty-sixty-columns__right-column">
